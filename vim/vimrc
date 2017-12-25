@@ -1,0 +1,38 @@
+" 基础配置
+set mouse=a " 允许使用鼠标定位
+set autowrite " 自动保存
+
+syntax enable " 开启语法高亮功能
+syntax on " 支持指定语法高亮配色方案替换默认方案
+
+set cursorline
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE " 高亮显示当前行
+set cursorcolumn
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE " 高亮光标所在列
+
+set number " 显示行号
+"set relativenumber " 显示相对行号
+set scrolloff=3 " 保持滚动时光标所在行距离顶端或底部的行数
+
+filetype on " 开启文件类型检测
+filetype plugin on " 根据文件类型加载
+filetype indent on " 自适应不同语言的智能缩进
+
+set expandtab " 将制表符扩展为空格
+set tabstop=4 " 设置制表符占用空格数 
+
+set softtabstop=4
+set shiftwidth=4 " 统一缩进为4
+
+set autoindent " 自动缩进
+set smartindent " 智能缩进
+set cindent " 设置c、cpp缩进
+
+set ignorecase " 搜索时忽略大小写
+set hlsearch " 高亮显示搜索结果
+
+set nocp " 关闭vi模式
+set nocompatible " 关闭vi兼容模式
+
+" 高级设置
+set laststatus=2 " 状态栏设置
