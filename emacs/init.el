@@ -1,7 +1,3 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -18,11 +14,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (monokai)))
- '(custom-safe-themes
-   (quote
-    ("8c4acde8417375abc15f41f56d1ddad62e13a4bd886d381ea1a1d4620c932933" default)))
-  '(package-selected-packages (quote (company))))
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(column-number-mode t)
+ '(custom-enabled-themes (quote (dichromacy)))
+ '(display-time-mode t)
+ '(line-number-mode nil)
+ '(package-selected-packages (quote (company)))
+ '(scroll-bar-mode nil)
+ '(size-indication-mode t)
+ '(tool-bar-mode nil))
 
 ;; 界面设置
 (custom-set-faces
