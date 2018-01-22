@@ -7,6 +7,6 @@ export shellWorkspace=$workspace/shell-projects
 export assemblyWorkspace=$workspace/assembly-projects
 
 # My personal files directory
-export personal=/media/pdyang/Mine/Personal
+export personal=~/Personal
 export notes=$personal/notes
 export lifeWrite=$personal/lifeWrite

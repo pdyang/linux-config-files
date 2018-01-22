@@ -8,7 +8,7 @@ alias ldir='ls | grep "/$"' # 只显示目录
 alias lldir='ls -l | grep "^d"' # 按单列只显示目录
 
 # rm
-alias rm='rm -v' # 提示所做的操作
+alias rm='rm -iv' # 提示所做的操作
 alias rd='rm -r' # 递归的删除目录及其内容
 
 # mkdir 

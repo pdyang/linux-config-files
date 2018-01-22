@@ -2,6 +2,10 @@
 
 dirname=$(dirname $0)
 
+function printMenu() {
+    echo -e "\t\tInstall Configuration Files"
+}
+
 function installConfigFiles() {
     for file in `ls | grep ^bash`
     do
@@ -12,9 +16,11 @@ function installConfigFiles() {
         cp -v $dirname/vim/vimrc ~/.vimrc
     fi
 
-    if [ -f $dirname/emacs/init.el ]; then
-	cp -v $dirname/emacs/init.el ~/.emacs.d/init.el
+    if [ -d $dirname/emacs ]; then
+	cp -vr $dirname/emacs/* ~/.emacs.d
     fi
 }
+
+printMenu
 
 installConfigFiles

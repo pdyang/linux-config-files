@@ -5,8 +5,6 @@
 (require 'init-ui)
 (require 'init-better-default)
 
-;; 开启全局补全
-(global-company-mode)
 
 ;; 变量设置
 (custom-set-variables
@@ -20,7 +18,6 @@
  '(custom-enabled-themes (quote (dichromacy)))
  '(display-time-mode t)
  '(line-number-mode nil)
- '(package-selected-packages (quote (company)))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
