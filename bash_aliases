@@ -1,5 +1,8 @@
 # Aliases definitions
 
+# grep
+alias grep='grep --color=auto'
+
 # ls
 alias ls='ls --color=auto -F' # 输出添加颜色, 并在尾部添加文件类型标志
 alias ll='ls -lh'
