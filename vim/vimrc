@@ -18,7 +18,7 @@ filetype on " 开启文件类型检测
 filetype plugin on " 根据文件类型加载
 filetype indent on " 自适应不同语言的智能缩进
 
-set expandtab " 将制表符扩展为空格
+;; set expandtab " 将制表符扩展为空格
 set tabstop=4 " 设置制表符占用空格数 
 
 set softtabstop=4
