@@ -30,7 +30,7 @@ function InstallBashConfigFiles()
 
 		# Definitions of my own envs and aliases
 		if [ -f ~/.bash_env ]; then
-		    . .bash_env
+		    . ~/.bash_env
 		fi
 EOF
     echo
