@@ -1,2 +1,3 @@
 # linux-config-files
-Linux configuration files for my own use
+
+LinuxDeepin configuration files for my own use

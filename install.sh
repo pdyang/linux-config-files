@@ -9,22 +9,30 @@ function Usage()
 
 		Usage: `basename $0` [选项]
 		选项 :
-		       --bash      Install bash config files.
-		       --emacs     Install emacs config files.
-		       --vim       Install vim config files.
-               --git       Config git.
-               --dev       Install development tools.
-		       --a         Install all of them.
-		       --help      Show this help.
-	EOF
+          --bash      Install bash config files.
+          --vim       Install vim config files.
+          --git       Config git.
+          --dev       Install development tools.
+          --a         Install all of them.
+          --help      Show this help.
+EOF
 }
 
 function InstallBashConfigFiles()
 {
     for FILE in `ls | grep ^bash`
     do
-	cp -v $FILE ~/".$FILE"
+      cp -v $FILE ~/".$FILE"
     done
+
+
+    cat <<-EOF >> ~/.bashrc
+
+		# Definitions of my own envs and aliases
+		if [ -f ~/.bash_env ]; then
+		    . .bash_env
+		fi
+EOF
     echo
 }
 function InstallVimConfigFiles()
@@ -36,18 +44,14 @@ function InstallVimConfigFiles()
     fi
     echo
 }
-function InstallEmacsConfigFiles()
-{
-    if [ -d $DIRNAME/emacs ]; then
-	    cp -vr $DIRNAME/emacs/* ~/.emacs.d
-    fi
-    echo
-}
 function InstallDevTools()
 {
-    sudo apt update && sudo apt install git qt5-default \
-        build-essential evince typora
+    DTK_DEVS=`apt list | grep '^libdtk' | cut -d '/' -f 1 | grep -v 'dbgsym$' | tr '\n' ' '`
+    CPP_DEVS="build-essential git"
+	TOOL_APPS="evince nautilus-nutstore"
+    sudo apt install $CPP_DEVS $DTK_DEVS $TOOL_APPS -y
 }
+
 function ConfigGit()
 {
     git config --global user.name pdyang
@@ -57,10 +61,6 @@ function ConfigGit()
 case "$1" in
 	--[Bb][Aa][Ss][Hh]		)
 		InstallBashConfigFiles
-		exit 0
-        ;;
-	--[Ee][Mm][Aa][Cc][Ss]	)
-		InstallEmacsConfigFiles
 		exit 0
         ;;
 	--[Vv][Ii][Mm]			)
@@ -76,9 +76,8 @@ case "$1" in
         exit 0
         ;;
 	-a | ""                 )
-		InstallBashConfigFiles
-		InstallEmacsConfigFiles
-		InstallVimConfigFiles
+        InstallBashConfigFiles
+        InstallVimConfigFiles
         InstallDevTools
         ConfigGit
 		exit 0

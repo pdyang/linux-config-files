@@ -11,14 +11,14 @@ set cursorcolumn
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE " 高亮光标所在列
 
 set number " 显示行号
-"set relativenumber " 显示相对行号
+set relativenumber " 显示相对行号
 set scrolloff=3 " 保持滚动时光标所在行距离顶端或底部的行数
 
 filetype on " 开启文件类型检测
 filetype plugin on " 根据文件类型加载
 filetype indent on " 自适应不同语言的智能缩进
 
-;; set expandtab " 将制表符扩展为空格
+" set expandtab " 将制表符扩展为空格
 set tabstop=4 " 设置制表符占用空格数 
 
 set softtabstop=4

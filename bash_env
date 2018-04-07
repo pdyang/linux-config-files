@@ -1,12 +1,5 @@
 # Environment vars definitions
 
-# workspace env
-export workspace=~/Workspace
-export cppWorkspace=$workspace/cpp-projects
-export shellWorkspace=$workspace/shell-projects
-export assemblyWorkspace=$workspace/assembly-projects
+RUSTVAR=~/.cargo/bin
 
-# My personal files directory
-export personal=~/Personal
-export notes=$personal/notes
-export lifeWrite=$personal/lifeWrite
+PATH=.:$PATH:$RUSTVAR
