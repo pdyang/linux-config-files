@@ -1,5 +1,3 @@
 # Environment vars definitions
 
-RUSTVAR=~/.cargo/bin
-
-PATH=.:$PATH:$RUSTVAR
+PATH=.:$PATH
