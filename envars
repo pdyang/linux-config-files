@@ -1,0 +1,6 @@
+# Environment vars definitions
+
+# golang
+export GOROOT=/opt/go
+export GOPATH=$HOME/workspace/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

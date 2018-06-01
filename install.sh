@@ -9,6 +9,7 @@ function Usage()
 
 		Usage: `basename $0` [选项]
 		选项 :
+          --var       Install envars file.
           --bash      Install bash config files.
           --vim       Install vim config files.
           --git       Config git.
@@ -18,21 +19,22 @@ function Usage()
 EOF
 }
 
+function InstallEnvars() {
+  if [ -f ./envars ]; then
+    cp -v ./envars $HOME/.envars 
+  fi
+  cat <<EOF >> $HOME/.profile
+    if [ -f $HOME/.envars ]; then
+      . $HOME/.envars
+    fi
+EOF
+}
 function InstallBashConfigFiles()
 {
     for FILE in `ls | grep ^bash`
     do
       cp -v $FILE ~/".$FILE"
     done
-
-
-    cat <<-EOF >> ~/.bashrc
-
-		# Definitions of my own envs and aliases
-		if [ -f ~/.bash_env ]; then
-		    . ~/.bash_env
-		fi
-EOF
     echo
 }
 function InstallVimConfigFiles()
@@ -59,6 +61,10 @@ function ConfigGit()
 }
 
 case "$1" in
+  --[Ee][Nn][Vv][Aa][Rr][Ss]  )
+    InstallEnvars
+    exit 0
+        ;;
 	--[Bb][Aa][Ss][Hh]		)
 		InstallBashConfigFiles
 		exit 0
@@ -76,6 +82,7 @@ case "$1" in
         exit 0
         ;;
 	-a | ""                 )
+        InstallEnvars
         InstallBashConfigFiles
         InstallVimConfigFiles
         InstallDevTools
