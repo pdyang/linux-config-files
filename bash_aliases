@@ -40,3 +40,7 @@ alias cdocuments="cd ~/Documents"
 #git
 alias gstatus="git status"
 alias gcommit="git commit"
+alias gpush="git push"
+alias gpull="git pull"
+alias gadd="git add"
+alias grm="git rm"
