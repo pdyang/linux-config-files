@@ -25,3 +25,18 @@ alias cp='cp -v' # 提示所做的操作
 
 # mv
 alias mv='mv -v'
+
+# cd
+alias c="cd"
+alias cworkspace="cd ~/workspace"
+alias cnotes="cd ~/notes"
+alias cdesktop="cd ~/Desktop"
+alias cvideos="cd ~/Videos"
+alias cmusic="cd ~/Music"
+alias cdownloads="cd ~/Downloads"
+alias cpictures="cd ~/Pictures"
+alias cdocuments="cd ~/Documents"
+
+#git
+alias gstatus="git status"
+alias gcommit="git commit"
