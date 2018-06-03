@@ -1,3 +1,0 @@
-# Environment vars definitions
-
-PATH=.:$PATH
