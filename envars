@@ -1,5 +1,9 @@
 # Environment vars definitions
 
+# 自己写的一些小工具程序
+export MYBIN=$HOME/workspace/bin
+export PATH=$PATH:$MYBIN
+
 # golang
 export GOROOT=/opt/go
 export GOPATH=$HOME/workspace/go
